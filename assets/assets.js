@@ -36,6 +36,7 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
+import ba_icon from './ba_icon.png';
 
 export const assets = {
     user_image,
@@ -75,43 +76,44 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    ba_icon
 };
 
-export const workData = [
+export const getWorkData = (lang) => [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: lang === 'vi' ? 'Dự án Frontend' : 'Frontend project',
+        description: lang === 'vi' ? 'Thiết kế Web' : 'Web Design',
         bgImage: '/work-1.png',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: lang === 'vi' ? 'Ứng dụng định vị' : 'Geo based app',
+        description: lang === 'vi' ? 'Ứng dụng di động' : 'Mobile App',
         bgImage: '/work-2.png',
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: lang === 'vi' ? 'Trang web nhiếp ảnh' : 'Photography site',
+        description: lang === 'vi' ? 'Thiết kế Web' : 'Web Design',
         bgImage: '/work-3.png',
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
+        title: lang === 'vi' ? 'Thiết kế UI/UX' : 'UI/UX designing',
+        description: lang === 'vi' ? 'Thiết kế UI/UX' : 'UI/UX Design',
         bgImage: '/work-4.png',
     },
 ]
 
-export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+export const getServiceData = (lang) => [
+    { icon: assets.web_icon, title: lang === 'vi' ? 'Thiết kế Web' : 'Web design', description: lang === 'vi' ? 'Phát triển web là quá trình xây dựng, lập trình...' : 'Web development is the process of building, programming...', link: '' },
+    { icon: assets.ba_icon, title: lang === 'vi' ? 'Phân tích nghiệp vụ' : 'Business Analyst', description: lang === 'vi' ? 'Phân tích nghiệp vụ bao gồm việc thu thập yêu cầu...' : 'Business analysis involves gathering requirements and...', link: '' },
+    { icon: assets.ui_icon, title: lang === 'vi' ? 'Thiết kế UI/UX' : 'UI/UX design', description: lang === 'vi' ? 'Thiết kế UI/UX tập trung vào việc tạo ra trải nghiệm người dùng...' : 'UI/UX design focuses on creating a seamless user experience...', link: '' },
+    { icon: assets.graphics_icon, title: lang === 'vi' ? 'Thiết kế đồ họa' : 'Graphics design', description: lang === 'vi' ? 'Các giải pháp thiết kế sáng tạo để nâng cao giao tiếp bằng...' : 'Creative design solutions to enhance visual communication...', link: '' },
 ]
 
-export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'Software Engineering - Ton Duc Thang University' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+export const getInfoList = (lang) => [
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: lang === 'vi' ? 'Ngôn ngữ' : 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: lang === 'vi' ? 'Học vấn' : 'Education', description: lang === 'vi' ? 'Kỹ thuật phần mềm - Đại học Tôn Đức Thắng' : 'Software Engineering - Ton Duc Thang University' },
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: lang === 'vi' ? 'Dự án' : 'Projects', description: lang === 'vi' ? 'Đã xây dựng hơn 5 dự án lớn' : 'Built more than 5 projects' }
 ];
 
 export const toolsData = [

@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image';
-import { assets, infoList, toolsData } from '../../assets/assets';
+import { assets, getInfoList, toolsData } from '../../assets/assets';
+import { translations } from '../../assets/translations';
 import { motion } from 'motion/react'
 
-const About = ({ isDarkMode }) => {
+const About = ({ isDarkMode, language }) => {
+    const t = translations[language].about;
     return (
         <motion.div id='about' className='w-full px-[12%] py-10 scroll-mt-20'
             initial={{ opacity: 0 }}
@@ -14,12 +16,12 @@ const About = ({ isDarkMode }) => {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-            >Introduction</motion.h4>
+            >{t.intro}</motion.h4>
             <motion.h2 className='text-5xl text-center font-ovo'
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-            >About me</motion.h2>
+            >{t.title}</motion.h2>
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -39,17 +41,14 @@ const About = ({ isDarkMode }) => {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className='flex-1'>
                     <p className='mb-10 max-w-2xl font-ovo'>
-                        I am an experienced Web Developer with over 4 years of professional
-                        expertise in the field. Throughout my career, I have had the privilege
-                        of collaborating with prestigious organization,
-                        contributing to their success and growth.
+                        {t.description}
                     </p>
                     <motion.ul
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                         className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
-                        {infoList.map(({ icon, iconDark, title, description }, index) => (
+                        {getInfoList(language).map(({ icon, iconDark, title, description }, index) => (
                             <motion.li
                                 whileHover={{ scale: 1.05 }}
                                 className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50'
@@ -65,7 +64,7 @@ const About = ({ isDarkMode }) => {
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.65 }}
                         className='my-6 text-gray-700 font-ovo dark:text-white/80'>
-                        Tools I use
+                        {t.tools}
                     </motion.h4>
                     <motion.ul
                         initial={{ opacity: 0 }}
